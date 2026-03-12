@@ -1,0 +1,49 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Juego simple</title>
+<style>
+body{
+    text-align:center;
+    font-family:Arial;
+}
+
+#boton{
+    position:absolute;
+    padding:20px;
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Haz clic en el botón</h1>
+<p>Puntos: <span id="puntos">0</span></p>
+
+<button id="boton">¡Clic!</button>
+
+<script>
+let puntos = 0
+let boton = document.getElementById("boton")
+
+function moverBoton(){
+    let x = Math.random() * window.innerWidth
+    let y = Math.random() * window.innerHeight
+    boton.style.left = x + "px"
+    boton.style.top = y + "px"
+}
+
+boton.onclick = function(){
+    puntos++
+    document.getElementById("puntos").textContent = puntos
+    moverBoton()
+}
+
+moverBoton()
+</script>
+
+</body>
+</html>
+```
